@@ -15,7 +15,7 @@ void setup() {
 
 
   
-   ToPosition(100,0,0);//x,y,z
+   ToPosition(150,0,0);//x,y,z
    
 }
 
@@ -31,12 +31,14 @@ void ToPosition(float x,float y,float z){
          float c2 = (pow(r,2)+pow(zh,2)-pow(l1,2)-pow(l2,2))/(2*l1*l2);
          float s2 = gm2*sqrt(1-pow(c2,2));
          q1 = degrees(atan2(y/gm1,x/gm1));
-         q2 = degrees(atan2(r,zh)-atan2(l2*s2,l1+l2*c2));
+         q2 = degrees(atan2(zh,r)-atan2(l2*s2,l1+l2*c2));
          q3 = degrees(atan2(s2,c2));
 
          Serial.println(q1+90);
-         Serial.println(q2+30);
+         Serial.println(q2);
          Serial.println(q3+180);
+
+         smooth(q1+90,q2+30,q3+180);
       }
       else{
          Serial.println("not");
@@ -52,4 +54,4 @@ void smooth(float n1,float n2,float n3){
        Q3.write(old3+=bet3);
        delay(delays);
     }
-  }
+    }
