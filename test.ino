@@ -15,7 +15,7 @@ void setup() {
 
 
   
-   RR(100,0,0);
+   ToPosition(100,0,0);x,y,z
    
 }
 
@@ -23,7 +23,7 @@ void loop() {
   // put your main code here, to run repeatedly:
 }
 
-void RR(float x,float y,float z){
+void ToPosition(float x,float y,float z){
      float l1=105,l2=145,h=97;
      float gm1=1,gm2=-1;
      float r=gm1*sqrt(pow(x,2)+pow(y,2)),zh=z-h;
